@@ -6,6 +6,8 @@
 
 #ifdef __cplusplus
 
+#include <string>
+
 void LoadGuiTextures();
 
 extern "C" {
@@ -18,6 +20,7 @@ TexturePtr Ship_GetCharFontTextureNES(u8 character);
 
 #ifdef __cplusplus
 }
+bool isStringEmpty(std::string str);
 #endif
 
 #endif // SHIP_UTILS_H
