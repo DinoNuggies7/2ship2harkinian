@@ -44,6 +44,8 @@
 #ifdef ENABLE_NETWORKING
 #include "2s2h/Network/Sail.h"
 Sail* Sail::Instance;
+#include "2s2h/Network/Anchor.h"
+Anchor* Anchor::Instance;
 #endif
 
 #include <libultraship/libultraship.h>
@@ -636,6 +638,7 @@ extern "C" void InitOTR() {
     GameInteractor::Instance = new GameInteractor();
 #ifdef ENABLE_NETWORKING
     Sail::Instance = new Sail();
+    Anchor::Instance = new Anchor();
 #endif
 
     LoadGuiTextures();
@@ -666,6 +669,9 @@ extern "C" void InitOTR() {
     if (CVarGetInteger("gNetwork.Sail.Enabled", 0)) {
         Sail::Instance->Enable();
     }
+    if (CVarGetInteger("gNetwork.Anchor.Enabled", 0)) {
+        Anchor::Instance->Enable();
+    }
 #endif
 
     std::shared_ptr<Ship::Config> conf = OTRGlobals::Instance->context->GetConfig();
@@ -681,6 +687,9 @@ extern "C" void DeinitOTR() {
 #ifdef ENABLE_NETWORKING
     if (CVarGetInteger("gNetwork.Sail.Enabled", 0)) {
         Sail::Instance->Disable();
+    }
+    if (CVarGetInteger("gNetwork.Anchor.Enabled", 0)) {
+        Anchor::Instance->Disable();
     }
     SDLNet_Quit();
 #endif
