@@ -11,7 +11,7 @@
 #include "ShipUtils.h"
 #ifdef ENABLE_NETWORKING
 #include "2s2h/Network/Sail.h"
-#include "2s2h/Network/Anchor.h"
+#include "2s2h/Network/Anchor/Anchor.h"
 #endif
 
 extern "C" {

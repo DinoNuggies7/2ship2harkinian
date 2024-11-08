@@ -2376,6 +2376,10 @@ void Player_PlaySfx(Player* player, u16 sfxId) {
         AudioSfx_PlaySfx(sfxId, &player->actor.projectedPos, 4, &gSfxDefaultFreqAndVolScale,
                          &gSfxDefaultFreqAndVolScale, &gSfxDefaultReverb);
     }
+
+    if (player->actor.id == ACTOR_PLAYER) {
+        GameInteractor_ExecuteOnPlayerSfx(sfxId);
+    }
 }
 
 /**

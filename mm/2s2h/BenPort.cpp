@@ -44,7 +44,7 @@
 #ifdef ENABLE_NETWORKING
 #include "2s2h/Network/Sail.h"
 Sail* Sail::Instance;
-#include "2s2h/Network/Anchor.h"
+#include "2s2h/Network/Anchor/Anchor.h"
 Anchor* Anchor::Instance;
 #endif
 
