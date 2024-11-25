@@ -1,21 +1,24 @@
 #include <libultraship/bridge.h>
 #include "2s2h/GameInteractor/GameInteractor.h"
+#include "2s2h/ShipInit.hpp"
+
+extern "C" {
 #include "z64.h"
 #include "overlays/actors/ovl_En_Bigokuta/z_en_bigokuta.h"
 #include "overlays/actors/ovl_En_Clear_Tag/z_en_clear_tag.h"
 #include "overlays/actors/ovl_En_Firefly/z_en_firefly.h"
 #include "overlays/actors/ovl_En_Fz/z_en_fz.h"
 #include "overlays/actors/ovl_En_Neo_Reeba/z_en_neo_reeba.h"
+}
 
 #define HIT_BY_SWORD_BEAM 1
 #define NOT_HIT_BY_SWORD_BEAM 0
 
+#define CVAR_NAME "gEnhancements.Masks.FierceDeitysAnywhere"
+#define CVAR CVarGetInteger(CVAR_NAME, 0)
+
 void RegisterFierceDeityAnywhere() {
-    REGISTER_VB_SHOULD(VB_DISABLE_FD_MASK, {
-        if (CVarGetInteger("gEnhancements.Masks.FierceDeitysAnywhere", 0)) {
-            *should = false;
-        }
-    });
+    COND_VB_SHOULD(VB_DISABLE_FD_MASK, CVAR, { *should = false; });
 
     REGISTER_VB_SHOULD(VB_DAMAGE_MULTIPLIER, {
         if (CVarGetInteger("gEnhancements.Masks.FierceDeitysAnywhere", 0)) {
@@ -164,3 +167,5 @@ void RegisterFierceDeityAnywhere() {
             }
         });
 }
+
+static RegisterShipInitFunc initFunc(RegisterFierceDeityAnywhere, { CVAR_NAME });
