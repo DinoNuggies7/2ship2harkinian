@@ -122,6 +122,8 @@ typedef enum {
     VB_SPAWN_BOSS_REMAINS,
     VB_BE_HOOKSHOT_SURFACE,
     VB_GIVE_ITEM_FROM_KNIGHT,
+    VB_CONSIDER_DARMANI_HEALED,
+    VB_CONSIDER_MIKAU_HEALED,
 } GIVanillaBehavior;
 
 typedef enum {
