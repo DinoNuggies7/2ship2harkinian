@@ -124,6 +124,8 @@ typedef enum {
     VB_GIVE_ITEM_FROM_KNIGHT,
     VB_CONSIDER_DARMANI_HEALED,
     VB_CONSIDER_MIKAU_HEALED,
+    VB_GIVE_ITEM_FROM_MIKAU,
+    VB_GIVE_ITEM_FROM_DARMANI,
 } GIVanillaBehavior;
 
 typedef enum {
