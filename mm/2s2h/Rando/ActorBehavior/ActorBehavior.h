@@ -14,6 +14,7 @@ void InitDoorWarp1VBehavior();
 void InitDmHinaBehavior();
 void InitDmStkBehavior();
 void InitEnAkindonutsBehavior();
+void InitEnBomBowlManBehavior();
 void InitEnBoxBehavior();
 void InitEnCowBehavior();
 void InitEnElfgrpBehavior();

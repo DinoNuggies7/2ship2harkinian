@@ -4,6 +4,7 @@ void RegisterCutscenes() {
     // MiscInteractions
     RegisterSkipDekuSalesman();
     RegisterSkipFallingMoonsTear();
+    RegisterSkipGivingBombersNotebook();
     RegisterSkipGreatFairyCutscene();
     RegisterSkipKafeiReveal();
     RegisterSkipScarecrowDance();
