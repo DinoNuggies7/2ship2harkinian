@@ -1095,6 +1095,8 @@ void AddEnhancements() {
                 WIDGET_CVAR_CHECKBOX },
               { "Time Moves when you Move", "gModes.TimeMovesWhenYouMove",
                 "Time only moves when Link is not standing still.", WIDGET_CVAR_CHECKBOX },
+              { "Hyper Enemies", "gModes.HyperEnemies",
+                "Double the rate at which enemies are updated, making them more difficult", WIDGET_CVAR_CHECKBOX },
               { "Mirrored World",
                 "gModes.MirroredWorld.Mode",
                 "Mirrors the world horizontally.",
