@@ -1766,3 +1766,9 @@ extern "C" int Controller_ShouldRumble(size_t slot) {
 
     return 0;
 }
+
+extern "C" void Controller_ApplyMouseInput(OSContPad* pad) {
+    auto coords = Ship::Context::GetInstance()->GetWindow()->GetMouseDelta();
+    pad[0].gyro_x += coords.y * -0.05f;
+    pad[0].gyro_y += coords.x * -0.05f;
+}

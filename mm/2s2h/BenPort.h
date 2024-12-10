@@ -134,6 +134,7 @@ void AudioMgr_CreateNextAudioBuffer(s16* samples, u32 num_samples);
 int Controller_ShouldRumble(size_t slot);
 void Controller_BlockGameInput();
 void Controller_UnblockGameInput();
+void Controller_ApplyMouseInput(OSContPad* data);
 void Overlay_DisplayText(float duration, const char* text);
 void Overlay_DisplayText_Seconds(int seconds, const char* text);
 uint32_t Ship_GetInterpolationFPS();

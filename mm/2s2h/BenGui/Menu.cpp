@@ -134,8 +134,10 @@ bool ModernMenuHeaderEntry(std::string label) {
 
 void BenMenu::Draw() {
     if (!IsVisible()) {
+        Ship::Context::GetInstance()->GetWindow()->SetMouseCapture(true);
         return;
     }
+    Ship::Context::GetInstance()->GetWindow()->SetMouseCapture(false);
     DrawElement();
     // Sync up the IsVisible flag if it was changed by ImGui
     SyncVisibilityConsoleVariable();

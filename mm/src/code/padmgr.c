@@ -37,6 +37,7 @@
 #include "fault.h"
 #include <stdio.h>
 #include <string.h>
+#include "2s2h/BenPort.h"
 // extern FaultMgr gFaultMgr;
 
 #define PADMGR_RETRACE_MSG (1 << 0)
@@ -612,6 +613,7 @@ void PadMgr_HandleRetrace(void) {
     // Wait for controller data
     // osRecvMesg(serialEventQueue, NULL, OS_MESG_BLOCK);
     osContGetReadData(sPadMgrInstance->pads);
+    Controller_ApplyMouseInput(sPadMgrInstance->pads);
 
     // Clear all but controller 1
     memset(&sPadMgrInstance->pads[1], 0, sizeof(*sPadMgrInstance->pads) * (MAXCONTROLLERS - 1));
