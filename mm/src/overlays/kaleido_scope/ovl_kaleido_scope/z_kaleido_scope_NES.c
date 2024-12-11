@@ -3576,17 +3576,17 @@ void KaleidoScope_Update(PlayState* play) {
                             }
                             sDelayTimer = 90;
                         }
-                    } else if (CHECK_BTN_ALL(input->press.button, BTN_START)) {
+                    } else if (CHECK_BTN_ALL(input->press.button, BTN_START) || CHECK_BTN_ALL(input->press.button, BTN_B)) {
                         Interface_SetAButtonDoAction(play, DO_ACTION_NONE);
                         pauseCtx->savePromptState = PAUSE_SAVEPROMPT_STATE_3;
                         sPauseMenuVerticalOffset = -6240.0f;
                         D_8082B90C = pauseCtx->roll;
                         Audio_PlaySfx_PauseMenuOpenOrClose(SFX_PAUSE_MENU_CLOSE);
-                    } else if (CHECK_BTN_ALL(input->press.button, BTN_B)) {
+                    }/* else if (CHECK_BTN_ALL(input->press.button, BTN_B)) {
                         Interface_SetAButtonDoAction(play, DO_ACTION_NONE);
                         pauseCtx->savePromptState = PAUSE_SAVEPROMPT_STATE_RETURN_TO_MENU;
                         D_8082B90C = pauseCtx->roll;
-                    }
+                    }*/
                     break;
 
                 case PAUSE_SAVEPROMPT_STATE_4:
