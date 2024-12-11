@@ -3586,7 +3586,7 @@ void KaleidoScope_Update(PlayState* play) {
                         Interface_SetAButtonDoAction(play, DO_ACTION_NONE);
                         pauseCtx->savePromptState = PAUSE_SAVEPROMPT_STATE_RETURN_TO_MENU;
                         D_8082B90C = pauseCtx->roll;
-                    }*/
+                    } */
                     break;
 
                 case PAUSE_SAVEPROMPT_STATE_4:
